@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>My Website</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" href="./favicon.ico" type="image/x-icon" />
+  </head>
+  <body
+    class="w-screen h-screen mx-auto text-center content-center grid grid-cols-3"
+  >
+    <main class="col-start-2">
+      <button id="increment">Tap me</button>
+      <div>You tapped <span id="count">0</span> time(s).</div>
+    </main>
+    <script type="module" path="./api.js"></script>
+    <script>
+      const [incrementElement, countElement] =
+        document.querySelectorAll("#increment, #count");
+      document.addEventListener("DOMContentLoaded", () => {
+        incrementElement.addEventListener("click", () => {
+          window.increment().then((result) => {
+            countElement.textContent = result.value;
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

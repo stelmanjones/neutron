@@ -1,0 +1,12 @@
+{
+  "version": 3,
+  "sources": ["../api/core.ts", "../api/logger.ts", "../api/index.ts"],
+  "sourcesContent": [
+    "export const NEUTRON = {};\n\nclass Neutron {}\n",
+    "export enum LogLevel {\n\tDEBUG = -4,\n\tINFO = 0,\n\tWARN = 4,\n\tERROR = 8,\n\tFATAL = 12\n}\n",
+    "import { ObjectFlags } from \"typescript\";\nimport { NEUTRON } from \"./core\";\nimport { LogLevel } from \"./logger\";\n\nObject.defineProperty(NEUTRON, \"LogLevel\", LogLevel);\nObject.defineProperty(window, \"NEUTRON\", NEUTRON);\n"
+  ],
+  "mappings": ";AAAO,IAAM,UAAU,CAAC;;;ACAjB,IAAK;AAAL,EAAK,cAAL;AACN,iCAAQ,MAAR;AACA,gCAAO,KAAP;AACA,gCAAO,KAAP;AACA,iCAAQ,KAAR;AACA,iCAAQ,MAAR;AAAA,GALW;;;ACIZ,OAAO,eAAe,SAAS,YAAY,QAAQ;AACnD,OAAO,eAAe,QAAQ,WAAW,OAAO;",
+  "debugId": "A450C8AFA9EE878864756E2164756E21",
+  "names": []
+}
