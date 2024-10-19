@@ -91,6 +91,13 @@ func (a *Application) onConfigChange() {
 	a.SetTitle(a.config.Name)
 }
 
+func (a *Application) AddPage(name, url string, startPage bool) {
+	a.pages[name] = Page{
+		URL:       url,
+		StartPage: startPage,
+	}
+}
+
 // Pages returns all the registered pages.
 func (a *Application) Pages() iter.Seq2[string, Page] {
 	a.mux.Lock()
